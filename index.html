@@ -36,15 +36,28 @@ a{color:var(--jt-green-d)}
 .crumb span{opacity:.55;margin:0 7px}
 
 .hero{background:var(--cream);border-bottom:1px solid var(--cream-d)}
-.hero-in{max-width:var(--maxw);margin:0 auto;padding:40px 22px 34px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--pink);font-weight:700;font-size:12.5px;letter-spacing:.14em;margin-bottom:14px;}
-.eyebrow::before{content:"";width:26px;height:2px;background:var(--pink);display:inline-block}
-h1{font-size:clamp(24px,4.4vw,36px);line-height:1.4;font-weight:900;margin:0 0 14px;letter-spacing:.02em;}
-h1 .u{background:linear-gradient(transparent 62%,rgba(0,153,68,.20) 62%);padding:0 2px;}
-.lead{font-size:15px;color:#4a4a40;max-width:660px;margin:0}
-.premise{margin-top:22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--jt-green);
+.hero-in{max-width:760px;margin:0 auto;padding:52px 22px 44px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--pink);font-weight:700;
+  font-size:12px;letter-spacing:.16em;margin:0 0 18px;justify-content:center}
+.eyebrow::before,.eyebrow::after{content:"";width:22px;height:2px;background:var(--pink);display:inline-block}
+h1{font-size:clamp(27px,5.2vw,42px);line-height:1.32;font-weight:900;margin:0 0 8px;letter-spacing:.01em}
+h1 .u{background:linear-gradient(transparent 60%,rgba(0,153,68,.22) 60%);padding:0 3px}
+.hero-sub{font-size:clamp(14px,2.2vw,17px);font-weight:700;color:var(--jt-green-d);
+  margin:0 0 20px;letter-spacing:.02em}
+.lead{font-size:15px;color:#4a4a40;margin:0 auto;line-height:1.9;max-width:640px}
+.lead b{color:var(--ink);font-weight:900}
+.premise{margin:24px auto 0;max-width:640px;text-align:left;background:#fff;border:1px solid var(--line);border-left:4px solid var(--jt-green);
   border-radius:10px;padding:14px 18px;font-size:13px;color:#54544a;max-width:660px;}
 .premise b{color:var(--jt-green-d)}
+
+/* ==== 判定理由 ==== */
+.reason{margin:14px 0 0;background:rgba(255,255,255,.16);border-radius:12px;padding:14px 16px}
+.reason-t{font-size:11.5px;font-weight:900;color:#c9f2d9;margin:0 0 8px;letter-spacing:.04em}
+.reason ul{list-style:none;margin:0;padding:0}
+.reason li{font-size:13px;color:#fff;line-height:1.75;padding:3px 0 3px 20px;position:relative}
+.reason li::before{content:"✓";position:absolute;left:0;top:3px;font-weight:900;color:#a8e6c0}
+.reason li.x::before{content:"×";color:#ffc9c4}
+.reason li b{font-weight:900}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
 .section{padding:34px 0}
@@ -101,8 +114,6 @@ select:focus-visible{outline:3px solid rgba(0,153,68,.35);outline-offset:2px;bor
 .verdict.ng{background:linear-gradient(120deg,#6f6f66,#54544a)}
 .verdict::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.08)}
 .verdict-kicker{font-size:12px;font-weight:700;letter-spacing:.14em;opacity:.9;margin-bottom:8px}
-.verdict-route{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
-  font-size:11.5px;font-weight:700;padding:3px 12px;border-radius:999px;margin-bottom:10px}
 .verdict-type{font-size:clamp(20px,3.4vw,27px);font-weight:900;line-height:1.4;margin:0 0 10px}
 .verdict-desc{font-size:14px;opacity:.96;max-width:680px;margin:0;line-height:1.7}
 
@@ -168,7 +179,7 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
 
 @media(max-width:560px){
   .seg{grid-template-columns:1fr}
-  .hero-in{padding:30px 18px 26px}
+  .hero-in{padding:36px 18px 30px}
   .btn{width:100%;text-align:center}
   .actions{flex-direction:column;align-items:stretch}
   .btn-ghost{text-align:center}
@@ -192,22 +203,28 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
 
 <header class="hero">
   <div class="hero-in">
-    <div class="eyebrow">飲食店向け・受動喫煙防止対策</div>
-    <h1>お店に必要な<span class="u">喫煙環境の標識（ステッカー）</span>を、<br>かんたん判定。</h1>
-    <p class="lead">改正健康増進法と、お店のあるエリアの条例にもとづいて、掲示できる標識を判定します。いくつかの情報を選ぶだけ。画面はこのページで完結します。</p>
+    <div class="eyebrow">受動喫煙防止対策</div>
+    <h1>飲食店 <span class="u">喫煙環境チェッカー</span></h1>
+    <p class="hero-sub">お店に必要なステッカーが、かんたんにわかります。</p>
+    <p class="lead">
+      お店の情報を<b>5つ選ぶだけ</b>。改正健康増進法とお店のあるエリアのルールにあわせて、
+      <b>選択できる喫煙の方法</b>と、<b>入口に掲示するステッカー</b>を判定します。
+      喫煙できる方法から順に表示します。
+    </p>
     <div class="premise">
-      <b>このツールの前提：</b>一般の飲食店を対象に、「どの喫煙区分が選べて、どの標識を貼ればよいか」を判定します。喫煙を主目的とするバー・スナック等（喫煙目的店）は、判定結果の最後に別枠でご案内します。
+      <b>ご利用の前に：</b>一般の飲食店を対象としたツールです。喫煙を主目的とするバー・スナックなどは、判定結果の最後に別枠でご案内します。
     </div>
   </div>
 </header>
 
 <main class="wrap">
+
   <section class="section">
     <div class="step-head">
       <span class="step-badge">STEP 1</span>
       <h2 class="step-title">お店の情報を入力</h2>
     </div>
-    <p class="step-sub">現状の調査ではなく、事実情報（エリア・開業時期・規模など）から選べる区分を判定します。</p>
+    <p class="step-sub">お店の場所・開業時期・広さなどをお答えください。5つの質問（エリアによってはもう1問）だけです。</p>
 
     <div class="card" id="form">
 
@@ -217,7 +234,7 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
           <span class="q-no">1</span>
           <div>
             <div class="q-label">お店のあるエリア（都道府県）</div>
-            <div class="q-help">国の法律に上乗せした独自ルール（条例）を設けている自治体があるため、エリアで判定が変わります。</div>
+            <div class="q-help">改正健康増進法に加えて、都道府県ごとの独自ルールがある場合があります。</div>
           </div>
         </div>
         <div class="field">
@@ -235,7 +252,7 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
           <span class="q-no">＋</span>
           <div>
             <div class="q-label">お店は千葉市内にありますか？</div>
-            <div class="q-help">千葉市には市独自の条例（従業員のいる店は喫煙可能室の設置不可）があります。</div>
+            <div class="q-help">千葉市には、市の独自ルールがあります。</div>
           </div>
         </div>
         <div class="seg" role="group" aria-label="千葉市内か">
@@ -250,7 +267,7 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
           <span class="q-no">＋</span>
           <div>
             <div class="q-label">お店は豊橋市内にありますか？</div>
-            <div class="q-help">豊橋市には市独自の条例（加熱式たばこを紙巻たばこと同等に扱う）があります。</div>
+            <div class="q-help">豊橋市には、市の独自ルールがあります。</div>
           </div>
         </div>
         <div class="seg" role="group" aria-label="豊橋市内か">
@@ -264,8 +281,8 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
         <div class="q-top">
           <span class="q-no">2</span>
           <div>
-            <div class="q-label">営業開始日は2020年4月1日以降ですか？</div>
-            <div class="q-help">2020年4月1日以降に開業した店舗は、紙巻たばこ飲食可の特例（喫煙可能室・喫煙可能店）の対象外です。</div>
+            <div class="q-label">お店をオープンしたのは2020年4月1日以降ですか？</div>
+            <div class="q-help">2020年4月1日より前から営業しているお店には、経過措置（特別なあつかい）があります。</div>
           </div>
         </div>
         <div class="seg" role="group" aria-label="開業時期">
@@ -279,8 +296,8 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
         <div class="q-top">
           <span class="q-no">3</span>
           <div>
-            <div class="q-label">資本金・出資の総額は5,000万円超ですか？</div>
-            <div class="q-help">個人事業主など会社以外が営む場合は「いいえ」を選択してください。</div>
+            <div class="q-label">資本金（出資の総額）は5,000万円を超えていますか？</div>
+            <div class="q-help">個人のお店・個人事業主の方は「いいえ」を選んでください。</div>
           </div>
         </div>
         <div class="seg" role="group" aria-label="資本金">
@@ -295,7 +312,7 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
           <span class="q-no">4</span>
           <div>
             <div class="q-label" id="areaQLabel">客席面積は100㎡超ですか？</div>
-            <div class="q-help" id="areaQHelp">「客席」の面積です。厨房・トイレ・レジ・通路などは含みません。</div>
+            <div class="q-help" id="areaQHelp">お客さまが座る席の広さです。厨房・トイレ・レジ・通路は含みません。</div>
           </div>
         </div>
         <div class="seg" role="group" aria-label="客席面積">
@@ -309,13 +326,13 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
         <div class="q-top">
           <span class="q-no">5</span>
           <div>
-            <div class="q-label">従業員を雇用していますか？</div>
-            <div class="q-help">同居の親族のみで営む場合は「いいえ」を選択してください。一部の自治体では、従業員の有無で選べる区分が変わります。</div>
+            <div class="q-label">従業員を雇っていますか？</div>
+            <div class="q-help">ご家族（同居の親族）だけで営んでいる場合は「いいえ」を選んでください。アルバイト・パートの方も「従業員」に含まれます。</div>
           </div>
         </div>
         <div class="seg" role="group" aria-label="従業員の有無">
-          <button type="button" class="opt" data-name="employee" data-val="yes">はい<small>従業員を雇用している</small></button>
-          <button type="button" class="opt" data-name="employee" data-val="no">いいえ<small>オーナー・同居親族のみ</small></button>
+          <button type="button" class="opt" data-name="employee" data-val="yes">はい<small>従業員を雇っている</small></button>
+          <button type="button" class="opt" data-name="employee" data-val="no">いいえ<small>従業員を雇っていない</small></button>
         </div>
       </div>
 
@@ -324,39 +341,39 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
         <div class="q-top">
           <span class="q-no">＋</span>
           <div>
-            <div class="q-label">全ての従業員から、喫煙可能室の設置について書面による承諾を得ていますか？</div>
-            <div class="q-help">埼玉県の条例による確認です。書面承諾があれば、従業員がいても特例（喫煙可能室・喫煙可能店）を選べます。</div>
+            <div class="q-label">たばこを吸える席をつくることについて、働いている方全員から書面で同意をもらっていますか？</div>
+            <div class="q-help">埼玉県のルールによる確認です。全員の書面での同意があれば、従業員がいても席で吸えるようにできます。</div>
           </div>
         </div>
         <div class="seg" role="group" aria-label="書面承諾">
-          <button type="button" class="opt" data-name="consent" data-val="yes">はい<small>全従業員の書面承諾あり</small></button>
-          <button type="button" class="opt" data-name="consent" data-val="no">いいえ<small>承諾なし・一部のみ</small></button>
+          <button type="button" class="opt" data-name="consent" data-val="yes">はい<small>全員から書面でもらっている</small></button>
+          <button type="button" class="opt" data-name="consent" data-val="no">いいえ<small>もらっていない・一部だけ</small></button>
         </div>
       </div>
 
     </div><!-- /card -->
 
     <div class="actions">
-      <button type="button" class="btn btn-primary" id="judge">標識を判定する</button>
-      <button type="button" class="btn btn-ghost" id="reset">選び直す</button>
+      <button type="button" class="btn btn-primary" id="judge">結果を見る</button>
+      <button type="button" class="btn btn-ghost" id="reset">最初からやり直す</button>
     </div>
-    <p class="hint-error" id="err">未回答の項目があります。すべて選択してください。</p>
+    <p class="hint-error" id="err">まだ選ばれていない質問があります。すべてお答えください。</p>
   </section>
 
   <!-- results -->
   <section id="result" aria-live="polite">
     <div class="verdict" id="verdict">
       <div class="verdict-kicker">判定結果</div>
-      <span class="verdict-route" id="v-route">—</span>
       <h2 class="verdict-type" id="v-type">—</h2>
       <p class="verdict-desc" id="v-desc">—</p>
+      <div class="reason" id="v-reason"></div>
     </div>
 
     <div class="res-head">
-      <h3>選べる喫煙区分と標識</h3>
+      <h3>選択できる喫煙の方法</h3>
       <span class="cnt" id="v-count"></span>
     </div>
-    <p class="res-note">実際に選ぶ区分に合わせて、該当の標識を掲示してください。標識の丸数字は厚生労働省の標識一覧の番号です。</p>
+    <p class="res-note">喫煙の自由度が高い方法から順に表示しています。この中から<b>1つを選び</b>、対応するステッカーを入口などに掲示してください。丸数字は厚生労働省のステッカー番号です。</p>
 
     <div class="opt-grid" id="patterns"></div>
 
@@ -364,17 +381,18 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
     <div class="bekku">
       <div class="bekku-h">
         <span class="badge">別枠確認</span>
-        <b>喫煙を主目的とするバー・スナック等に該当する場合</b>
+        <b>お酒がメインで、たばこも売っているバー・スナックの方へ</b>
       </div>
       <div class="bekku-b">
-        次の<b>全国共通要件をすべて満たす</b>場合は、上記とは別に「喫煙目的店（E）」に<b>該当する場合があります</b>。業態・販売形態・提供内容で判断される区分であり、希望して選ぶものではありません。
+        次の<b>3つすべてにあてはまる</b>お店は、上のご案内とは別に「喫煙目的店」に<b>あてはまる場合があります</b>。ご希望で選べるものではなく、お店のスタイルによって決まります。あてはまりそうな場合は、保健所などにご確認ください。
         <ol>
-          <li>施設内で喫煙場所を提供することを<b>主たる目的</b>とする</li>
-          <li>通常主食と認められる食事を<b>主として提供しない</b></li>
-          <li>たばこの<b>対面販売</b>（出張販売を含む）をしている</li>
+          <li>お客さまにたばこを吸う場所を提供することが、<b>お店の主な目的</b>である</li>
+          <li>食事（主食となる料理）を<b>メインでは出していない</b></li>
+          <li>お店で<b>たばこを対面で販売している</b></li>
         </ol>
+        <p style="margin:0 0 14px">この場合は、次のステッカーを使います。</p>
         <div class="signs" id="bekkuSigns"></div>
-        <p class="bekku-note">※店内で喫煙可能なたばこ販売店（標識⑧・⑨・⑩）は、飲食営業を行う店舗を除く別業態のため、本チェッカーの対象外です。該当が疑われる場合は自治体窓口にご確認ください。20歳未満は喫煙可能部分に立入禁止（来店客・従業員とも）。</p>
+        <p class="bekku-note">※たばこ屋さんの中で吸えるようにするタイプ（ステッカー⑧・⑨・⑩）は、飲食店とは別のあつかいのため、このツールの対象外です。／たばこを吸える場所には、20歳未満の方は入れません（お客さま・従業員とも）。</p>
       </div>
     </div>
 
@@ -382,18 +400,18 @@ footer{margin-top:50px;background:var(--jt-green-dd);color:rgba(255,255,255,.8);
     <div class="callout" id="callout" style="display:none">
       <div class="callout-h">
         <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 2 2 21h20L12 2Z" fill="#f0a94a"/><path d="M12 9v5M12 17.2v.1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-        <b>エリア別の注意（条例）</b>
+        <b>このエリアで気をつけること</b>
       </div>
       <div class="callout-b" id="callout-body"></div>
     </div>
 
     <div class="disc">
       <b>ご利用にあたって</b><br>
-      本ツールの判定は目安です。最終的な区分・標識・届出の要否は、必ず店舗所在地の自治体窓口・保健所、または厚生労働省の情報でご確認ください。
+      この結果は目安です。実際に工事や届出をされる前に、必ずお店のある市区町村の<b>保健所</b>にご確認ください。
       <ul>
-        <li>喫煙可能室・喫煙可能店（D）を設ける場合は、自治体への<b>届出</b>が必要です。</li>
-        <li>喫煙室には法令上の<b>構造・技術的基準</b>（出入口の風速など）があります。</li>
-        <li>喫煙できる場所には<b>20歳未満（客・従業員とも）は立ち入り禁止</b>です。</li>
+        <li>席でたばこを吸えるようにする場合は、保健所などへの<b>届出</b>が必要です。</li>
+        <li>喫煙室には、<b>煙が外に漏れないようにするための決まり</b>（出入口の風の強さなど）があります。工事の前にご確認ください。</li>
+        <li>たばこを吸える場所には、<b>20歳未満の方（お客さま・従業員とも）は入れません</b>。</li>
         <li>参考：<a href="https://jyudokitsuen.mhlw.go.jp/sign/" target="_blank" rel="noopener">厚生労働省 標識一覧</a> ／ <a href="https://jyudokitsuen.mhlw.go.jp/business/restaurant/" target="_blank" rel="noopener">飲食店の皆さまへ</a> ／ <a href="https://jyudokitsuen.mhlw.go.jp/business/restaurant/type_4.php" target="_blank" rel="noopener">喫煙を主目的とする施設</a></li>
       </ul>
     </div>
@@ -416,7 +434,7 @@ const SIGN_IMG = {"sign01": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAA
 /* =========================================================================
    喫煙環境 判定チェッカー v0.2 — 判定ロジック
    出典：喫煙チェッカー_エリア別フロー設計_修正版.xlsx（2026-07）
-   構造：国法（改正健康増進法）の共通NG条件 → エリア別ルート → 標識A〜E
+   構造：改正健康増進法の共通条件 → エリア別ルール → 結果A〜E
    ========================================================================= */
 
 const PREFS = ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県"];
@@ -438,25 +456,25 @@ const SIGNS = {
 
 /* ---- 結果パターン A〜D ---- */
 const PATTERNS = {
-  A:{rid:"A",ridClass:"a",tag:"全店共通",tagClass:"gray",name:"禁煙（店内全面禁煙）",
-    specs:[{t:"屋内に喫煙場所を設けない",cls:""}],
-    desc:"店内に喫煙できる場所を設けないパターン。標識の掲示は原則任意ですが、一部エリアでは禁煙店にも掲示義務があります。",
+  A:{rid:"A",ridClass:"a",tag:"",tagClass:"gray",name:"店内全面禁煙",
+    specs:[{t:"喫煙不可",cls:"no"}],
+    desc:"店内にたばこを吸える場所を設けません。喫煙室の工事・届出は不要です。",
     signs:["n16"]},
-  B:{rid:"B",ridClass:"",tag:"全店共通",tagClass:"",name:"喫煙専用室",
-    specs:[{t:"紙巻・加熱式ともに喫煙可",cls:""},{t:"室内での飲食は不可",cls:"no"},{t:"20歳未満 立入禁止",cls:"age"}],
-    desc:"客席とは別に、喫煙専用の部屋を設けるパターン。室内ではすべてのたばこを吸えますが、飲食はできません。どの飲食店でも設置できます。",
+  B:{rid:"B",ridClass:"",tag:"",tagClass:"",name:"喫煙専用室を設ける",
+    specs:[{t:"紙巻可",cls:""},{t:"室内飲食不可",cls:"no"},{t:"20歳未満入店不可",cls:"age"}],
+    desc:"客席とは別に、喫煙専用の部屋を設けます。すべてのたばこを吸えますが、室内で飲食は提供できません。",
     signs:["n02","n01"]},
-  C:{rid:"C",ridClass:"",tag:"全店共通",tagClass:"",name:"加熱式たばこ専用喫煙室（指定たばこ専用喫煙室）",
-    specs:[{t:"加熱式たばこのみ可",cls:""},{t:"室内での飲食も可",cls:""},{t:"20歳未満 立入禁止",cls:"age"}],
-    desc:"加熱式たばこ専用の部屋を設けるパターン。室内で飲食もできます（経過措置）。",
+  C:{rid:"C",ridClass:"",tag:"",tagClass:"",name:"加熱式たばこ専用喫煙室を設ける",
+    specs:[{t:"加熱式のみ可",cls:""},{t:"室内飲食可",cls:""},{t:"20歳未満入店不可",cls:"age"}],
+    desc:"加熱式たばこ専用の部屋を設けます。紙巻たばこは吸えませんが、室内で飲食を提供できます。",
     signs:["n04","n03"]},
-  D1:{rid:"D",ridClass:"d",tag:"特例（既存特定飲食提供施設）",tagClass:"orange",name:"喫煙可能室（店内の一部を喫煙可）",
-    specs:[{t:"紙巻・加熱式ともに喫煙可",cls:""},{t:"室内での飲食も可",cls:""},{t:"20歳未満 立入禁止",cls:"age"},{t:"届出が必要",cls:"cond"}],
-    desc:"店内の一部を喫煙可能室にするパターン。室内で喫煙も飲食もできます。特例OKの店舗のみ設置でき、自治体への届出が必要です。",
+  D1:{rid:"D",ridClass:"d",tag:"",tagClass:"orange",name:"店内の一部で喫煙可",
+    specs:[{t:"紙巻可",cls:""},{t:"喫煙しながら飲食可",cls:""},{t:"20歳未満入店不可",cls:"age"},{t:"届出必要",cls:"cond"}],
+    desc:"店内の一部を、喫煙しながら飲食できる席にします。保健所などへの届出が必要です。",
     signs:["n13","n12"]},
-  D2:{rid:"D",ridClass:"d",tag:"特例（既存特定飲食提供施設）",tagClass:"orange",name:"喫煙可能店（店内全体を喫煙可）",
-    specs:[{t:"紙巻・加熱式ともに喫煙可",cls:""},{t:"飲食も可",cls:""},{t:"20歳未満 立入禁止",cls:"age"},{t:"届出が必要",cls:"cond"}],
-    desc:"店内全体を喫煙可能にするパターン。特例OKの店舗のみ。店の出入口に標識を掲示します。自治体への届出が必要です。",
+  D2:{rid:"D",ridClass:"d",tag:"",tagClass:"orange",name:"店内全体で喫煙可",
+    specs:[{t:"紙巻可",cls:""},{t:"喫煙しながら飲食可",cls:""},{t:"20歳未満入店不可",cls:"age"},{t:"届出必要",cls:"cond"}],
+    desc:"店内全体を、喫煙しながら飲食できるようにします。保健所などへの届出が必要です。20歳未満は入店できません。",
     signs:["n14"]}
 };
 
@@ -468,36 +486,60 @@ const PATTERNS = {
    noSmokeSignDuty: 禁煙にする場合も標識掲示義務
    ======================================================================= */
 const AREA_RULES = {
-  tokyo_chiba:{name:"東京都・千葉市ルート",areaThreshold:100,employee:"ng",kanetsu:"ok",noSmokeSignDuty:false,
+  // 東京都と千葉市は判定内容は同じだが、注意文はエリアごとに出し分ける（notesFn）
+  // 東京都と千葉市は判定内容は同じだが、注意文・禁煙標識義務はエリアごとに出し分ける
+  // 東京都：禁煙店にも標識掲示義務あり（東京都受動喫煙防止条例／都保健所HP）
+  tokyo_chiba:{name:"東京都・千葉市のルール",areaThreshold:100,employee:"ng",kanetsu:"ok",
+    noSmokeSignDuty:false,
+    signDutyFn:function(pref){ return pref==="東京都"; },
+    kanetsuNote:"",notes:[],
+    notesFn:function(pref){
+      if(pref==="千葉県"){ return [
+        "ご家族以外の従業員を雇っているお店は、<b>席でたばこを吸えるようにはできません</b>。喫煙室をつくるか、全席禁煙になります。",
+        "ルールを守らないと<b>過料（罰金）</b>の対象になることがあります。"];
+      }
+      return [
+        "ご家族以外の従業員を雇っているお店は、<b>席でたばこを吸えるようにはできません</b>。喫煙室をつくるか、全席禁煙になります。",
+        "全席禁煙にする場合も、<b>「禁煙」のステッカーを貼る必要</b>があります。"];
+    }},
+  osaka:{name:"大阪府のルール",areaThreshold:30,employee:"ok",kanetsu:"ok",noSmokeSignDuty:false,
     kanetsuNote:"",notes:[
-    "従業員（同居の親族以外）を雇用している場合、紙巻たばこ飲食可の<b>喫煙可能室・喫煙可能店（D）は選べません</b>。",
-    "千葉市では、従業員のいる店が喫煙可能室を設置した場合、<b>過料</b>の対象になります。"]},
-  osaka:{name:"大阪専用特例ルート",areaThreshold:30,employee:"ok",kanetsu:"ok",noSmokeSignDuty:false,
+    "大阪府では、客席の広さの基準が<b>30㎡</b>です（国のきまりの100㎡より厳しくなっています）。"]},
+  hyogo:{name:"兵庫県のルール",areaThreshold:100,employee:"ok",kanetsu:"ng",noSmokeSignDuty:true,
+    kanetsuNote:"兵庫県では、加熱式たばこも紙巻たばこと同じあつかいです。そのため、加熱式たばこ専用の部屋はつくれません。",notes:[
+    "<b>加熱式たばこ専用の部屋はつくれません</b>（加熱式たばこも紙巻たばこと同じあつかいです）。",
+    "全席禁煙にする場合も、<b>「禁煙」のステッカーを貼る必要</b>があります。"]},
+  saitama:{name:"埼玉県のルール",areaThreshold:100,employee:"consent",kanetsu:"ok",noSmokeSignDuty:false,
     kanetsuNote:"",notes:[
-    "大阪府の面積基準は<b>客席面積30㎡超</b>です（国法の100㎡より厳しい基準）。"]},
-  hyogo:{name:"標準ルート（兵庫県の制限あり）",areaThreshold:100,employee:"ok",kanetsu:"ng",noSmokeSignDuty:true,
-    kanetsuNote:"兵庫県では加熱式たばこは紙巻たばこと同様の取り扱いのため、加熱式たばこ専用喫煙室は設置できません。",notes:[
-    "<b>加熱式たばこ専用喫煙室（C）は設置できません</b>（加熱式たばこは紙巻たばこと同様の取り扱い）。",
-    "禁煙にする場合も、<b>「禁煙施設」である旨の標識掲示が必要</b>です。"]},
-  saitama:{name:"埼玉ルート（書面承諾の確認あり）",areaThreshold:100,employee:"consent",kanetsu:"ok",noSmokeSignDuty:false,
-    kanetsuNote:"",notes:[
-    "従業員を雇用している場合、<b>全従業員の書面承諾</b>がないと喫煙可能室・喫煙可能店（D）は選べません。"]},
-  kanagawa:{name:"標準ルート（神奈川県の制限あり）",areaThreshold:100,employee:"ok",kanetsu:"half",noSmokeSignDuty:false,
-    kanetsuNote:"神奈川県では、施設面積の半分以上を加熱式たばこ専用喫煙室とすることはできません（半分未満のみ可）。",notes:[
-    "加熱式たばこ専用喫煙室（C）は、<b>施設面積の半分未満</b>の場合のみ設置できます。",
-    "20歳未満の立入禁止違反には、施設管理者に<b>罰則</b>が適用されます。"]},
-  akita:{name:"秋田ルート",areaThreshold:100,employee:"ng",kanetsu:"ng",noSmokeSignDuty:true,
-    kanetsuNote:"秋田県では指定たばこ（加熱式）専用喫煙室は設置できません。",notes:[
-    "従業員のいる飲食店は原則屋内禁煙のため、<b>喫煙可能室・喫煙可能店（D）は選べません</b>（喫煙専用室は設置可。経過措置は2028年3月まで）。",
-    "<b>加熱式たばこ専用喫煙室（C）は設置できません</b>。",
-    "喫煙可能施設に加えて、<b>「禁煙施設」である旨の標識も掲示</b>します。"]},
-  okayama:{name:"岡山専用特例ルート",areaThreshold:100,employee:"ok",kanetsu:"ok",noSmokeSignDuty:false,
+    "従業員を雇っている場合、<b>働いている方全員の書面での同意</b>がないと、席でたばこを吸えるようにはできません。"]},
+  kanagawa:{name:"神奈川県のルール",areaThreshold:100,employee:"ok",kanetsu:"half",noSmokeSignDuty:false,
+    kanetsuNote:"神奈川県では、お店の広さの半分以上を加熱式たばこ専用の部屋にすることはできません。",notes:[
+    "加熱式たばこ専用の部屋は、<b>お店の広さの半分未満</b>までしかつくれません。",
+    "20歳未満の方を立ち入らせてしまうと、お店の側に<b>罰則</b>があります。"]},
+  // 秋田：従業員がいる店の喫煙可能室は【2028年4月1日以降】設置不可（経過措置は2028年3月まで）。
+  // それまでは特例OK。期限到来で employee:"ng" 相当に自動切替する。
+  akita:{name:"秋田県のルール",areaThreshold:100,
+    employee:(new Date() >= new Date(2028,3,1)) ? "ng" : "ok",
+    kanetsu:"ng",noSmokeSignDuty:true,
+    kanetsuNote:"秋田県では、加熱式たばこ専用の部屋はつくれません。",notes:[
+    "<b>加熱式たばこ専用の部屋はつくれません</b>。",
+    "全席禁煙にする場合も、<b>「禁煙」のステッカーを貼る必要</b>があります。",
+    "従業員を雇っているお店が席でたばこを吸えるようにできるのは、<b>2028年3月31日まで</b>です（経過措置）。2028年4月1日以降は、全席禁煙にするか、喫煙専用室をつくる必要があります。"]},
+  okayama:{name:"岡山県のルール",areaThreshold:100,employee:"ok",kanetsu:"ok",noSmokeSignDuty:false,
     kanetsuNote:"",notes:[]},
-  toyohashi:{name:"豊橋ルート",areaThreshold:100,employee:"ok",kanetsu:"ng",noSmokeSignDuty:true,
-    kanetsuNote:"豊橋市では加熱式たばこは紙巻たばこと同等扱いのため、加熱式たばこ専用喫煙室（標識③・④）は使用対象外です。",notes:[
-    "<b>加熱式たばこ専用喫煙室（C）は設置できません</b>（加熱式たばこは紙巻たばこと同等扱い。標識③・④は使用対象外）。",
-    "<b>禁煙の飲食店にも、禁煙標識の掲示義務</b>があります。"]},
-  default:{name:"標準ルート（国法どおり）",areaThreshold:100,employee:"ok",kanetsu:"ok",noSmokeSignDuty:false,
+  // 北海道：改正健康増進法どおりだが、禁煙とした飲食店に「禁煙施設」の表示義務あり（北海道受動喫煙防止条例／道公式HP）
+  hokkaido:{name:"北海道のルール",areaThreshold:100,employee:"ok",kanetsu:"ok",noSmokeSignDuty:true,
+    kanetsuNote:"",notes:[
+    "全席禁煙にする場合も、出入口の見やすい場所に<b>「禁煙」のステッカーを貼る必要</b>があります。"]},
+  // 静岡：改正健康増進法どおりだが、禁煙店にも標識掲出義務あり（Excel特筆事項）
+  shizuoka:{name:"静岡県のルール",areaThreshold:100,employee:"ok",kanetsu:"ok",noSmokeSignDuty:true,
+    kanetsuNote:"",notes:[
+    "全席禁煙にする場合も、<b>「禁煙」のステッカーを貼る必要</b>があります。"]},
+  toyohashi:{name:"豊橋市のルール",areaThreshold:100,employee:"ok",kanetsu:"ng",noSmokeSignDuty:true,
+    kanetsuNote:"豊橋市では、加熱式たばこも紙巻たばこと同じあつかいです。そのため、加熱式たばこ専用の部屋はつくれません。",notes:[
+    "<b>加熱式たばこ専用の部屋はつくれません</b>（加熱式たばこも紙巻たばこと同じあつかい。ステッカー③・④は使いません）。",
+    "<b>全席禁煙のお店にも、「禁煙」ステッカーを貼る義務</b>があります。"]},
+  default:{name:"改正健康増進法どおり",areaThreshold:100,employee:"ok",kanetsu:"ok",noSmokeSignDuty:false,
     kanetsuNote:"",notes:[]}
 };
 
@@ -515,6 +557,8 @@ function resolveAreaKey(){
   if(p==="神奈川県") return "kanagawa";
   if(p==="秋田県") return "akita";
   if(p==="岡山県") return "okayama";
+  if(p==="静岡県") return "shizuoka";
+  if(p==="北海道") return "hokkaido";
   if(p==="愛知県") return answers.toyohashiCity==="yes"?"toyohashi":"default";
   return "default";
 }
@@ -558,8 +602,8 @@ function updateConditionalUI(){
   document.getElementById("areaYesSub").textContent=`${th}㎡超`;
   document.getElementById("areaNoSub").textContent=`${th}㎡以下`;
   document.getElementById("areaQHelp").textContent = (answers.pref==="大阪府")
-    ? "大阪府は条例により基準が30㎡です（30㎡ちょうどは「いいえ」）。厨房・トイレ・レジ・通路などは含みません。"
-    : "「客席」の面積です。厨房・トイレ・レジ・通路などは含みません。";
+    ? "お客さまが座る席の広さです。厨房・トイレ・レジ・通路は含みません。大阪府は条例により基準が30㎡です（30㎡ちょうどの場合は「いいえ」を選んでください）。"
+    : "お客さまが座る席の広さです。厨房・トイレ・レジ・通路は含みません。";
   // 千葉市・豊橋市サブ設問
   document.getElementById("q-chiba").classList.toggle("show",needChibaQ());
   document.getElementById("q-toyohashi").classList.toggle("show",needToyohashiQ());
@@ -592,16 +636,16 @@ function judge(){
   let tokureiOK, ngReason="";
   if(commonNG){
     tokureiOK=false;
-    if(answers.openAfter==="yes") ngReason="2020年4月1日以降の開業";
-    else if(answers.capitalOver==="yes") ngReason="資本金・出資総額5,000万円超";
-    else ngReason=`客席面積${rule.areaThreshold}㎡超`;
+    if(answers.openAfter==="yes") ngReason="2020年4月1日以降に開業されたお店のため";
+    else if(answers.capitalOver==="yes") ngReason="資本金が5,000万円を超えているため";
+    else ngReason=`客席の広さが${rule.areaThreshold}㎡を超えているため`;
   }else if(answers.employee==="no"){
     tokureiOK=true;
   }else{
     switch(rule.employee){
       case "ok": tokureiOK=true; break;
-      case "ng": tokureiOK=false; ngReason="従業員を雇用（このエリアの条例）"; break;
-      case "consent": tokureiOK=(answers.consent==="yes"); if(!tokureiOK) ngReason="全従業員の書面承諾なし（埼玉県条例）"; break;
+      case "ng": tokureiOK=false; ngReason="このエリアでは従業員を雇っているお店が対象外のため"; break;
+      case "consent": tokureiOK=(answers.consent==="yes"); if(!tokureiOK) ngReason="働いている方全員の書面での同意が得られていないため"; break;
     }
   }
 
@@ -626,7 +670,7 @@ function patternCard(p,opts){
     <div class="pattern-h">
       <span class="rid ${p.ridClass}">${p.rid}</span>
       <span class="name">${p.name}</span>
-      <span class="tag ${opts.disabled?"red":p.tagClass}">${opts.disabled?"このエリアでは不可":p.tag}</span>
+      ${(opts.disabled || p.tag) ? `<span class="tag ${opts.disabled?"red":p.tagClass}">${opts.disabled?"このエリアでは設置不可":p.tag}</span>` : ""}
     </div>
     <div class="pattern-b">
       ${opts.banText?`<div class="ban">${opts.banText}</div>`:""}
@@ -642,47 +686,79 @@ function render(rule,tokureiOK,ngReason){
   // verdict
   const v=document.getElementById("verdict");
   v.classList.toggle("ng",!tokureiOK);
-  document.getElementById("v-route").textContent=rule.name;
   if(tokureiOK){
-    document.getElementById("v-type").textContent="特例OK：喫煙可能室・喫煙可能店も選べます";
-    document.getElementById("v-desc").textContent="既存特定飲食提供施設の特例対象です。禁煙・喫煙専用室・加熱式たばこ専用喫煙室に加えて、紙巻たばこを吸いながら飲食できる「喫煙可能室・喫煙可能店」も選択肢になります（届出が必要）。";
+    document.getElementById("v-type").textContent="席でたばこを吸えるようにできるお店です";
+    document.getElementById("v-desc").textContent="条件を満たしているため、喫煙室をつくらなくても、客席でたばこを吸いながら飲食できるようにできます。もちろん、喫煙室をつくる方法や、全席禁煙にする方法も選べます。";
   }else{
-    document.getElementById("v-type").textContent="特例NG：喫煙可能室・喫煙可能店は選べません";
-    document.getElementById("v-desc").textContent=`${ngReason}のため、紙巻たばこ飲食可の特例（喫煙可能室・喫煙可能店）は対象外です。禁煙・喫煙専用室${rule.kanetsu!=="ng"?"・加熱式たばこ専用喫煙室":""}から選択します。`;
+    document.getElementById("v-type").textContent="席でたばこを吸えるようにはできないお店です";
+    document.getElementById("v-desc").textContent=`${ngReason}、客席でたばこを吸えるようにはできません。たばこを吸える場所を用意したい場合は、喫煙専用室${rule.kanetsu!=="ng"?"や、加熱式たばこ専用の部屋":""}をつくる方法があります。`;
   }
 
-  // patterns
+  /* ---- 判定の根拠（お答えいただいた内容を、条件ごとに◯×で提示）---- */
+  const th = rule.areaThreshold;
+  const items = [];
+  items.push({ ok: answers.openAfter==="no",
+    t: answers.openAfter==="no"
+      ? "<b>2020年4月1日より前</b>から営業している"
+      : "<b>2020年4月1日以降</b>に開業した" });
+  items.push({ ok: answers.capitalOver==="no",
+    t: answers.capitalOver==="no"
+      ? "資本金が<b>5,000万円以下</b>"
+      : "資本金が<b>5,000万円を超える</b>" });
+  items.push({ ok: answers.areaOver==="no",
+    t: answers.areaOver==="no"
+      ? `客席の広さが<b>${th}㎡以下</b>`
+      : `客席の広さが<b>${th}㎡を超える</b>` });
+  if(rule.employee==="ng" && answers.employee==="yes"){
+    items.push({ ok:false, t:`<b>従業員を雇っている</b>（${answers.pref}のルールでは、席でたばこを吸えるようにはできません）` });
+  }else if(rule.employee==="consent" && answers.employee==="yes"){
+    items.push({ ok: answers.consent==="yes",
+      t: answers.consent==="yes"
+        ? "従業員を雇っているが、<b>全員から書面で同意</b>を得ている"
+        : "従業員を雇っているが、<b>全員の書面での同意がない</b>" });
+  }
+  const rEl = document.getElementById("v-reason");
+  rEl.innerHTML =
+    `<p class="reason-t">この結果になった理由（お答えいただいた内容）</p><ul>` +
+    items.map(i=>`<li class="${i.ok?"":"x"}">${i.t}</li>`).join("") +
+    `</ul>`;
+
+  // patterns：たばこを吸える方法を先に、禁煙（最終手段）を最後に表示する
   const wrap=document.getElementById("patterns");
   let html="",count=0;
 
-  // A 禁煙
-  const aOpts={};
-  if(rule.noSmokeSignDuty){
-    aOpts.extraChips=[{t:"このエリアは禁煙でも標識掲示義務",cls:"cond"}];
-    aOpts.descOverride="店内に喫煙できる場所を設けないパターン。このエリアでは、禁煙の場合も「禁煙」標識の掲示が必要です。";
-  }
-  html+=patternCard(PATTERNS.A,aOpts);count++;
-
-  // B 喫煙専用室
-  html+=patternCard(PATTERNS.B,{});count++;
-
-  // C 加熱式
-  if(rule.kanetsu==="ng"){
-    html+=patternCard(PATTERNS.C,{disabled:true,banText:rule.kanetsuNote});
-  }else{
-    const cOpts={};
-    if(rule.kanetsu==="half"){cOpts.extraChips=[{t:"施設面積の半分未満のみ可",cls:"cond"}];cOpts.descOverride=PATTERNS.C.desc+" "+rule.kanetsuNote;}
-    html+=patternCard(PATTERNS.C,cOpts);count++;
-  }
-
-  // D 特例
+  // ① D 席で吸える（特例OKのお店のみ・いちばん自由度が高い）
   if(tokureiOK){
     html+=patternCard(PATTERNS.D1,{});count++;
     html+=patternCard(PATTERNS.D2,{});count++;
   }
 
+  // ② C 加熱式専用の部屋（エリアにより不可）
+  if(rule.kanetsu==="ng"){
+    html+=patternCard(PATTERNS.C,{disabled:true,banText:rule.kanetsuNote});
+  }else{
+    const cOpts={};
+    if(rule.kanetsu==="half"){
+      cOpts.extraChips=[{t:"施設面積の半分未満まで",cls:"cond"}];
+      cOpts.descOverride=PATTERNS.C.desc+" "+rule.kanetsuNote;
+    }
+    html+=patternCard(PATTERNS.C,cOpts);count++;
+  }
+
+  // ③ B 喫煙専用室
+  html+=patternCard(PATTERNS.B,{});count++;
+
+  // ④ A 禁煙（最終手段：喫煙室をつくらない場合の選択肢として最後に）
+  const aOpts={extraChips:[]};
+  const signDuty = rule.signDutyFn ? rule.signDutyFn(answers.pref) : rule.noSmokeSignDuty;
+  if(signDuty){
+    aOpts.extraChips.push({t:"禁煙でもステッカー掲示が必要",cls:"cond"});
+    aOpts.descOverride="店内にたばこを吸える場所を設けません。喫煙室の工事・届出は不要です。このエリアでは、全席禁煙の場合も「禁煙」ステッカーの掲示が必要です。";
+  }
+  html+=patternCard(PATTERNS.A,aOpts);count++;
+
   wrap.innerHTML=html;
-  document.getElementById("v-count").textContent=`（選べる区分：${count}パターン）`;
+  document.getElementById("v-count").textContent=`（${count}通り／この中から1つ選択）`;
 
   // 別枠：喫煙目的店の標識（E-1/E-2）
   document.getElementById("bekkuSigns").innerHTML =
@@ -691,11 +767,12 @@ function render(rule,tokureiOK,ngReason){
   // 条例注意
   const callout=document.getElementById("callout");
   const body=document.getElementById("callout-body");
-  if(rule.notes.length){
-    body.innerHTML=`<span class="area-name">${label}</span>には、国の法律に上乗せした独自ルールがあります。<ul>${rule.notes.map(n=>`<li>${n}</li>`).join("")}</ul>`;
+  const notes = rule.notesFn ? rule.notesFn(answers.pref) : rule.notes;
+  if(notes.length){
+    body.innerHTML=`<span class="area-name">${label}</span>には、改正健康増進法に加えて独自のルールがあります。<ul>${notes.map(n=>`<li>${n}</li>`).join("")}</ul>`;
     callout.style.display="block";
   }else{
-    body.innerHTML=`<span class="area-name">${label}</span>では、本ツールが判定に用いる範囲で国法に上乗せする条例はありません（市区町村の独自ルールがある場合があります）。`;
+    body.innerHTML=`<span class="area-name">${label}</span>では、このツールで判定する範囲での独自ルールはありません。ただし、市区町村ごとのルールがある場合がありますので、詳しくは保健所などにご確認ください。`;
     callout.style.display="block";
   }
 
